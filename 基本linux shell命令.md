@@ -10,6 +10,36 @@ command  [-options]  parameter1  parameter2 ...
 
 [Enter]按鍵代表著一行指令的開始啟動。指令太長的時候，可以使用反斜線 \ 來跳脫[Enter]符號，使指令連續到下一行。++注意！反斜線後就立刻接特殊字符，才能跳脫？++
 
+## 并行运行 &
+
+prog1 & prog2 && fg （bg就是放在background的意思）
+
+This will:
+
+Start prog1.
+Send it to background, but keep printing its output.
+Start prog2, and keep it in foreground, so you can close it with ctrl-c.
+When you close prog2, you'll return to prog1's foreground, so you can also close it with ctrl-c
+
+## 将正在运行的任务放在后台
+
+```bash
+# 按Ctrl+z，暂停运行
+jobs # 查看终止的任务名称
+bg %jobnum # 将该任务放在后台
+```
+## 下载网上文件
+
+```bash
+wget
+-b #放到后台下载
+-nv #不显示进度条，如果不设置即便放在后台也会显示出来进度条，影响操作
+```
+
+## difference between `;` and `&&` and `|` and `||` and `&` and `|&`
+
+[网址](http://unix.stackexchange.com/questions/159489/is-there-a-difference-between-and-and)
+
 ## nano 文本编辑
 nano的使用其實很簡單，你可以直接加上檔名就能夠開啟一個舊檔或新檔！
 
