@@ -2,9 +2,11 @@
 
 [说明](http://seqanswers.com/forums/showthread.php?t=58221)
 
-## 文库名为名称自动加上数字作为reads id，然后合并文库
+## BBMap
 
 ### muxbyname.sh
+
+文库名作为名称，自动加上数字作为reads id，然后合并文库
 
 Multiplexes reads from multiple files after renaming them based on their initial file. Opposite of demuxbyname.
 
@@ -110,6 +112,7 @@ Taxonomer结果中的json文件，**就是taxonomer用来画图的数据，应�
 ### 提取表格中特定数据
 
 这里面涉及到[text manipulation](https://www.ibm.com/developerworks/aix/library/au-unixtext/)，请参阅
+[AWK使用详解](http://www.cnblogs.com/ggjucheng/archive/2013/01/13/2858470.html)
 
 #### 拆分出所有病毒数据
 
@@ -125,6 +128,6 @@ Taxonomer文章中并未介绍画图所用的工具，其画图所用原文件�
 
 ```bash
 
-wget "https://services.taxonomer.com/dev/taxreportsimple/?cmd=&stdin=http%253A%252F%252Fservices.taxonomer.com%252Ftaxonomer%252F%253Fcmd%253D%2526stdin%253Dhttp%2525253A%2525252F%2525252Fservices.taxonomer.com%2525252Ffq2fa%2525252F%2525253Fcmd%2525253Dhttp%25252525253A%25252525252F%25252525252Fservices.taxonomer.com%25252525252Fpartialstream%25252525252F%25252525253Fcmd%25252525253D--url%25252525252520http%25252525253A%25252525252F%25252525252F50.0.17.68%25252525252Ftaxangler%25252525252F%25252525252520--bytes%2525252525252055000000%25252525252520--separator%25252525252520%252525252540%252525252526id%25252525253DEk6B5GOoG%25252526id%2525253DNkgpr9z_oG%2526username%253Dproduction%252F178%2526downloadName%253DXH-1_H7VFTALXX_L2_2.clean.fq.full.taxonomer%2526cache%253D7025.full.taxonomer%2526partialCache%253Dtrue%2526id%253DVJb6H5zujG&downloadName=XH-1_H7VFTALXX_L2_2.clean.fq.full.taxonomer&id=41QpH5zOsM" -O /pub/users/vmi/jjz/Hongying/taxonomer_results/XH-1_H7VFTALXX_L2_2.clean.fq.full.taxonomer --no-check-certificate -b -nv & wget "https://services.taxonomer.com/dev/taxreportsimple/?cmd=&stdin=http%253A%252F%252Fservices.taxonomer.com%252Ftaxonomer%252F%253Fcmd%253D%2526stdin%253Dhttp%2525253A%2525252F%2525252Fservices.taxonomer.com%2525252Ffq2fa%2525252F%2525253Fcmd%2525253Dhttp%25252525253A%25252525252F%25252525252Fservices.taxonomer.com%25252525252Fpartialstream%25252525252F%25252525253Fcmd%25252525253D--url%25252525252520http%25252525253A%25252525252F%25252525252F50.0.17.68%25252525252Ftaxangler%25252525252F%25252525252520--bytes%2525252525252055000000%25252525252520--separator%25252525252520%252525252540%252525252526id%25252525253DEyqptMusM%25252526id%2525253D4kecTFfuoG%2526username%253Dproduction%252F178%2526downloadName%253DXH-2_H7VFTALXX_L2_1.clean.fq.full.taxonomer%2526cache%253D7365.full.taxonomer%2526partialCache%253Dtrue%2526id%253D41ZcTYGusM&downloadName=XH-2_H7VFTALXX_L2_1.clean.fq.full.taxonomer&id=V17cpFf_iG" -O /pub/users/vmi/jjz/Hongying/taxonomer_results/XH-2_H7VFTALXX_L2_1.clean.fq.full.taxonomer --no-check-certificate -b -nv
+wget "https://services.taxonomer.com/dev/taxreportsimple/?cmd=&stdin=http%253A%252F%252Fservices.taxonomer.com%252Ftaxonomer%252F%253Fcmd%253D%2526stdin%253Dhttp%2525253A%2525252F%2525252Fservices.taxonomer.com%2525252Ffq2fa%2525252F%2525253Fcmd%2525253Dhttp%25252525253A%25252525252F%25252525252Fservices.taxonomer.com%25252525252Fpartialstream%25252525252F%25252525253Fcmd%25252525253D--url%25252525252520http%25252525253A%25252525252F%25252525252F50.0.17.68%25252525252Ftaxangler%25252525252F%25252525252520--bytes%2525252525252055000000%25252525252520--separator%25252525252520%252525252540%252525252526id%25252525253D41keOYtjz%25252526id%2525253D4JxkluYKsM%2526username%253Dproduction%252F178%2526downloadName%253DXH-1_H7VFTALXX_L2_2.clean.fq.full.taxonomer%2526cache%253D7025.full.taxonomer%2526partialCache%253Dtrue%2526id%253DEJ-1gOtFiz&downloadName=XH-1_H7VFTALXX_L2_2.clean.fq.full.taxonomer&id=Ek7kx_FtoM" -O /pub/users/vmi/jjz/Hongying/taxonomer_results/XH-1_H7VFTALXX_L2_2.clean.fq.full.taxonomer --no-check-certificate -b -nv & wget "https://services.taxonomer.com/dev/taxreportsimple/?cmd=&stdin=http%253A%252F%252Fservices.taxonomer.com%252Ftaxonomer%252F%253Fcmd%253D%2526stdin%253Dhttp%2525253A%2525252F%2525252Fservices.taxonomer.com%2525252Ffq2fa%2525252F%2525253Fcmd%2525253Dhttp%25252525253A%25252525252F%25252525252Fservices.taxonomer.com%25252525252Fpartialstream%25252525252F%25252525253Fcmd%25252525253D--url%25252525252520http%25252525253A%25252525252F%25252525252F50.0.17.68%25252525252Ftaxangler%25252525252F%25252525252520--bytes%2525252525252055000000%25252525252520--separator%25252525252520%252525252540%252525252526id%25252525253D41HCgYYjz%25252526id%2525253D4ylr0xYYif%2526username%253Dproduction%252F178%2526downloadName%253DXH-1_H7VFTALXX_L2_2.clean.fq.full.taxonomer%2526cache%253D7025.full.taxonomer%2526partialCache%253Dtrue%2526id%253DV1-rRlKKiM&downloadName=XH-1_H7VFTALXX_L2_2.clean.fq.full.taxonomer&id=Ek7SCxFtsf" -O /pub/users/vmi/jjz/Hongying/taxonomer_results/XH-2_H7VFTALXX_L2_1.clean.fq.full.taxonomer --no-check-certificate -b -nv
 
 ```
